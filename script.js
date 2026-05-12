@@ -1,4 +1,4 @@
-const apiKey = 'AIzaSyDMK3ULxaBRqza9tT5pWwE_7noXtMdZCSA'; // Substitua pela sua chave de API
+const apiKey = 'SUACHAVE'; // Substitua pela sua chave de API
 
 async function analisarSentimento() {
     const texto = document.getElementById("textoParaAnalisar").value;
