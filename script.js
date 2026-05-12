@@ -1,3 +1,5 @@
+const apiKey = 'AIzaSyDMK3ULxaBRqza9tT5pWwE_7noXtMdZCSA'; // Substitua pela sua chave de API
+
 async function analisarSentimento() {
     const texto = document.getElementById("textoParaAnalisar").value;
     const resultadoDiv = document.getElementById("resultado");
@@ -9,9 +11,7 @@ async function analisarSentimento() {
     resultadoDiv.textContent = "Analisando...";
 
 
-
-
-    const model = 'gemini-1.5-flash';
+    const model = 'gemini-3.1-flash-lite';
     const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
 
     const prompt = `Analise o sentimento da seguinte sentença e classifique-o como POSITIVO, NEGATIVO ou NEUTRO. Apresente apenas a classificação.`;
@@ -27,11 +27,7 @@ async function analisarSentimento() {
                 parts: [{ text: texto }],
             },
         ],
-        generationConfig: {
-            temperature: 0.2, // Ajuste a temperatura conforme necessário (máximo 1.0)
-            topK: 32,        // Ajuste o topK conforme necessário
-            topP: 0.8,       // Ajuste o topP conforme necessário
-        },
+    
     };
 
     try {
